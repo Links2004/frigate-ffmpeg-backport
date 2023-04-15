@@ -7,7 +7,7 @@ RUN apt-get update \
 WORKDIR /rootfs
 RUN wget -O /rootfs/ffmpeg.deb "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/5.0.1-8/jellyfin-ffmpeg5_5.0.1-8-bullseye_amd64.deb"
 
-FROM ghcr.io/blakeblackshear/frigate:0.12.0-rc2
+FROM ghcr.io/blakeblackshear/frigate:0.12.0
 COPY --from=wget /rootfs/ffmpeg.deb /tmp/ffmpeg.deb
 
 RUN cd /tmp \
